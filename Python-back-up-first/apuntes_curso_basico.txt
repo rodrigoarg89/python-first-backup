@@ -1,0 +1,933 @@
+Variables en Python = espacio en memoria en pc
+
+Funciones
+
+type() para saber q tipo de valor es
+leng() longitud de caracteres para str
+
+name = 'Rodrigo'
+name[2] = d
+
+slicing() rebanado
+text[2:4] = 'dr' No incluye al ultimo caracter
+text[0:] = 'Rodrigo'
+text[:len(text)- 1] = 'Rodrig' No incluye al indice indicado [len(text)-1}
+text[:len(text)] = 'Rodrigo'
+
+paso para saltar de un caracter al otro segun se indique el salto
+cuando estamos usando saltos podemos usar inidces fuera de rango y no resultará
+en error.
+text[1:6:2] del str 'Python' solo se seleccionaran yhn, entonces seleccionamos 
+del 1 al 6 sin incluir al inidce 6, y saltando dos lugares cada vez
+
+text - 'Python'
+text[1:6:2]  print 'yhn'
+
+
+METODOS DE STR
+cadena.metodo(valores)
+
+- Capitalixe retorna una copia del str con el primer caracter en mayuscula
+cadena.capitalize()
+text = 'mis primeros pasos en python'
+text.capitalize() - --> 'Mis primeros pasos en python'
+
+Otros metodos importantes para str son: find, index, isdigit, islower, isalnum, 
+isupper, isalpha, lower, isdecimal, upper.
+
+Los metoodos que comienzan con is generalmente retornan true o false, ya que 
+son para cmprobar si continen o no por ejemplo isalnum si contiene catacteres alfanumericos.
+
+lower retorna una copia en minuscula
+upper ternos una copia en mayuscula
+
+
+FUNCION INPUT
+para solicitar al usuario que ingrese datos
+var = input(mensaje)
+num = input('ingrese un mensaje: ')
+print(num)
+
+la funcion input siempre retorna un STR
+
+num = int(input('ingrese un mensaje: '))
+print(num)
+type(num) --> int
+
+
+OPERADORES
+operador + operandos = expresion
+
+Tipo de op.
+aritmticos, logicos, de asignacion y relacionales
+
+OPERADPRES ATIRMETICOS
+Operadores aritmeticos: + - * y / (este op / siempre retorno un num float)
+para obtener un  entero en la / tenemos que usar una doble barra // (floor division)
+Operador de division entera // (util en algoritmos de busqueda binaria)
+en este caso el operador // solo mostrará la parte entera del resultado, 
+solo retorna un num float cuando dividamos con un num de comoas float.
+5.6 // 3.5 --> 1.0 solo muestra la parte entera pero de tipo float
+5.6 / 3.5  --> 1.5999999999999999
+
+Op. exponente **
+5 ** 3 --> 125
+5 ** 0 --> 1
+
+Operador % retorno el resto de la division
+5 % 2 --> 1
+16 % 4 --> 0
+
+Orden las operaciones 
+PEMDAS parentesis, exponentes, multiplicacion, division, suma, y resta
+
+
+OPERADORES LOGICOS
+Nos permiten trab con valores bool.
+AND OR NOT
+Op AND evalua si el operando izq es igual al derecho, si uno de los dos 
+operadores es falso, el resultado es 
+
+Op OR si uno de los dos es TRUE el resultado es verdadero.
+
+Op NOT, lo que hace es negar el valor el valor de la expresion
+not X, si la expresion es verdadera el result será False
+y si la expresion es falsa, el resutl será True.
+
+Si x es true, not x sera False
+Si x es flase, not x será True.
+
+not True --> False
+not False --> True
+
+Prioridad de Operadores
+not --> and --> or  --- en este orden se ejecutan
+
+
+OPERADORES RELACIONALES
+Utiliados para comparar valores, y dan true o false.
+> < >= <= == !=
+
+5 == 5 True
+3 >= 3 True
+8 != 8 False
+'Hola' == 'hola' False
+
+'A' == 'B' False
+'A' < 'B' True
+'B' > 'A' True
+'C' != 'D' True
+'Noris' == 'Gino' False
+
+OPERADORES DE ASIGNACION
+Sirven para asignar un valor a una variable.
+= -=  +=  /=  //= *=  **=  %=
+
+edad = 3
+edad += 3
+edad *= 2
+edad
+12
+
+
+SENTENCIA CONDICIONAL
+Es una isntruccion o un grupo de instrucciones 
+cuya ejecuciion depende del valor de una condicion booleana.
+
+if condicion:
+
+temp = 15
+if temp < 25:
+    print('cold")
+>>>'cold;
+
+Clausula 'else'
+if condicion:
+else:
+if temp < 25:
+    print('cold")
+else:
+    print('hot')
+
+Clausula 'ELIF'
+Puede haber una sola clausula else pero muchas elif.
+
+temp = 0
+if temp <= 0:
+    print('very cold")
+elif temp < 25: 
+    print('cold')
+else:
+    print('hot')
+
+COMENTARIOS
+Text que se escribe en el programa para facilitar su 
+comprension. Para entender la logica implementada.
+
+# comentario
+Evitar comentar en exceso, puede dificultar su lectura.
+
+TIPOS DE DATOS
+LISTAS son estrucuras de datos para almacenar multiples
+valores en una secuancia
+ejemplo [1, 2, 3, 4]
+para definir una lista como tal tenemos que difinirlo
+con corhetes.
+Una lista es una secuencia ordenada porq cada elemento esta ubicado
+en un indice en la secuencia en orden creciente (01234...)
+
+Las listas son mutables, es decir pueden ser modificadas.
+
+lista[indice] para acceder a un elemento de una lista.
+
+letras = ['a', 'b', 'c']
+
+>>>letras[0]
+'a'
+
+APPEND para agregar un elemnto al final de una lista
+usamos el metodo append.
+lista.append(elemento)
+
+nums =[1, 2, 3, 4, 5]
+nums.append(6)
+>>>nums
+[1, 2, 3, 4, 5, 6]
+
+INSERT para agregar un elemen en la posicion especificada.
+lista.insert(indice, elemento)
+
+nums.insert(0, 7)
+>>>nums
+[7, 1, 2, 3, 4, 5]
+
+REMOVE para eliminar la primera ocurrencia del elemento.
+
+lista.remove(elemento)
+>>>a = [1, 2, 3, 4, 5, 6, 4]
+>>>a.remove(4)
+>>>a
+[1, 2, 3, 5, 6, 4]
+
+Error de valor cuando intentamos remover un elem que no existe
+en la lista.
+ValueError: list.remove(x): x is not in list.
+
+IN para encontrar o verificar si un elemento esta presente en la lista.
+elemento in lista
+
+Si el elem esta n la lista el result es True, si no es False.
+
+>>>vocales = ['a', 'b', 'c', 'd']
+>>>'a' in vocales
+True
+>>>'z' in vocales
+False
+
+INDEX retorna el indice de la primera ocurrencia del elem en la lista.
+>>>vocales = ['a', 'b', 'c', 'd']
+>>>vocales.index('b')
+1
+
+si intentamos encontrar un valor que no esta en la lista
+ValueError: x is not in list.
+
+Por esto tenemos que verificar que el elem si se encuentre para evitar errores.
+
+
+MUTABLE
+Para cambiar o actualizar el valior de una lista.
+list[index] = new_valor
+>>>vocales[1] = 'g'
+>>>vocales
+['a', 'g', 'c', 'd']
+
+METODOS DE LAS LISTAS
+Son operaciones comunes q ya estan implementadas en python
+list.method(parameter)
+
+Metodos importantes de una lista
+.count(element) para contar cuantas veces se repit un element en una lista
+.extend(list) par extender una lista agregandole elemen de otra lista.
+.pop() elimina y retorna el ultimo element de una lista
+.reverse() reversa el prden actual de la lista
+.sort() ordena la list en un orden especifico, ascenden o descendente
+
+
+
+TUPLAS
+Es una estruc de datos INMUTABLE que contiene una secuencia ordenada de elementos.
+Estan encerradas por parentesis.
+a = (1, 2, 3, 4) en orden 0, 1, 2, 3
+
+Pueden contener cualquier tipo de dat igual q las listas.
+Pueden tener distintos tipos de datos.
+Son inmutables
+>>>a[0] = 5
+TypeError: 'tuple' object does not support item assignament.
+
+
+ACCEDER a un elemento de una lista si se puede
+>>>a[0] 
+1
+
+Encontrar un elemtno
+IN
+>>> 2 in a
+True
+>>> 5 in a
+False
+
+INDEX encotrar el indice o donde esta ubicado el elemento, s primer ocurrencia.
+tupla.index(elemento)
+>>>letras = ('a', 'b', 'c', 'd', 'e')
+???letras.index('c')
+2
+
+>>>letras.index('z')
+ValueError: tuple.index(x): x is not in tuple.
+
+Por lo tant hay que usar un operador IN con un condicional para asegurarnos que el 
+elemento este en la tupla para evitar errores antes de llamar al metodo INDEX.
+
+COUNT cuanta le numero de ocurrencia del elemento en la tupla.
+>>> nums = (1, 2, 3, 4, 5, 2, 2)
+>>>nums.count(2)
+3
+
+
+DICCIONARIOS
+Son estructuras de datos que nos van a permiten relacionar dos valores enla misma 
+estructur de datos para poder acceder a ellos de una forma mucho mas eficiente.
+
+Es una coleccion de pares claves valor.
+{'A': 45, 'B': 50, 'C': 65}
+
+Con la clave accedemos al valor en el programa.
+
+Los diccionarios son:
+una cleccion de pares claves valor
+las claves deben ser unicas e inmutables. Es decir no puden ser listas, si pueden ser
+cadenas de caracteres y las tuplas, tambien pueden ser de tipo numericos.
+Los valores asociados pueden ser de cualquier tipo.
+La clave se usa para acceder a su valor asociado.
+Los pares claves valor peuden ser modificados añadidos , y eliminados, por lo tanto
+los diccionarios son un tipo de estructuras de datos mutables.
+
+Como accedera a un valor en un diccionario.
+dicionario[Clave]
+>>>my_dictionary = {'A': 45, 'B': 50, 'C': 65}
+>>>my-dictionary['A']
+45
+
+GET metodo para obtener valores
+>>>dictionary.get(clave)
+>>>my_dictionary.get('A')
+45
+
+Como los dictionary son mutables podemos añadir y modificar pares clave valor.
+dictinary[clave] = new_value
+
+>>>my_dictionary['D'] = 80
+>>>my_dictionary           
+{'A': 45, 'B': 50, 'C': 65, 'D': 80}  en este caswo se agregó un nuevo par,
+
+pero si la clave ya existe, se modificará el valor existente.
+>>>my_dictionary['A'] = 80        
+>>>my_dictionary
+{'A': 80, 'B': 50, 'C': 65, 'D': 80}
+
+
+REMOVER o borrar un par clave valor
+>>>del dictionary[clave]
+>>>del my_dictionary['A']           
+my_dictionary 
+{'B': 50, 'C': 65, 'D': 80}
+
+IN para confirmar la existencia de una clave en el diccionario.
+clave in dicc
+>>>'A' in my_dictionary
+False
+
+
+DOCUMENTACION
+python.org
+Library Reference
+
+
+CICLO FOR
+Es una estructura de control en propagación que permite ejecutar 
+una o varias veces lineas de codigos multiples veces.
+Usamos un for cuando sabemos con antelacion cuantas veces 
+debemos repetir ciertas isntrucciones.
+Cuando no sabemos usamos el otro tipo de ciclo.
+Sintaxis
+for <var> in range(inicio, fin):
+    #codigo
+var es una variable  de control.
+La Var de control
+es una variab q se va a utilizar en el codigo que se va a repetir,
+Se actualiza automaticamente antes de cada iteración.
+Debe tener un nombre descriptivo.
+
+Los valores a los q se actuakliza en cada iteración estan detrminados 
+por range.
+for i in range(4):
+       print(i)  #cuerpo de ciclo, la linea de codgio q se va a repetir
+0
+1
+2
+3
+
+RANGE(x) retorna una secuencia especial de numeros enteros que nosotros
+especificamos. El valor x representa el valor final de la secuencia.
+range(4)  retorna 0 1 2 3
+
+for i in range(4, 10):  #no incluye el ultimo valor fin
+    print(i)
+4
+5
+6
+7
+8
+9
+
+range(start, stop[, step])
+
+start el valor es 0 si no se especifica
+stop El valor del param stop
+step El valor es 1 si no se especifica, paso es cuanto vamos a sumar de un 
+entero al otro.
+
+Asi es como funciona el range.
+
+
+CICLO SOBRE ITERABLES
+Un iterable es un elem que retorna sus elem uno a la vez.
+Ej: string, listas, tuplas, diccionarios, Otros...
+
+Cada uno de esos elementos se le va asignar a la variable de control, uno a la vez
+cuando estamos iterando.
+for variable_de_control in iterable:  #list, tuple, dicc, etc
+    #codigo
+
+for char in 'loops':
+    print(char)         
+l
+o
+o
+p
+s
+
+Para dicc hay un poco de variacion:
+for clave in dicc:
+    print(clave)
+
+letras = {'A': 1, 'B': 2, 'C': 3}
+              
+for clave in letras:   print(clave)              
+A
+B
+C
+
+Para iterar sobre sus valores debemos usar un metodo que nos retorne
+sus valores.
+for valor in letras.values():    print(valor)
+1
+2
+3
+
+Si queremos iterar sobre los valores clave valor, hacemos:
+for clave, valor in letras.items():    print(clave, valor)
+A 1
+B 2
+C 3
+
+
+
+CICLO WHILE
+Ciclo que continua mientras la condicion es true, se detiene cuando 
+es false.
+Nosotros somos los encargados de definir cuando la condicion es false.
+
+sintaxis
+while condicion:
+    # codigo
+
+Un ciclo while no tiene un numero fijo o predeterminado de iteraciones.
+Se jecuta hasta que la condicione es false.
+
+Los ciclos while no actualizan las variab de control automaticamente,
+Deben ser actualizadas en el cuerpo del ciclo.
+x = 20
+while x < 35:
+    print(x) 
+    x += 3
+20
+23
+26
+29
+32
+
+
+FUNCIONES
+Bloque de codigo reutilizables que realiza una tarea en especifico.
+Las funciones sirven para realizar tareas.
+
+DRY don't repeat yourself
+
+tarea() tarea() tarea() tarea()
+De esta manera solo debemos llamar a nuestra tarea cada vez q las necesitemos.
+
+Ventajas de tener un codigo de una funcion:
+reusable, conciso, leible, mantenible, comprobable.
+
+Como definir una funcion
+def funcion():  #funcion es el nombre de la funcion
+    #codigo
+
+def mostrar_mensaje():
+    print('Hola, Mundo')
+
+LLAMAR A UNA FUNCION 
+nombre_de_la_funcion()
+
+los valores de la funcion son parametros, y las valores 
+que les pasamos se denominan argunmentos.
+
+Un parametro es una variable que se incluye en la definicion
+de la funcion para representar y guardar un valor que podemos
+pasar cuandoe stamos llamando a la funcion.
+
+Los parametros se incluyen en la defincion de la funcion.
+
+def funcion(parametros):
+    #codigo
+
+def mostrar_doble(num):
+    print(num * 2)
+mostrar_doble(8)
+16
+
+num = 20
+mostrar_doble(num)
+40
+
+Argumento es el valor que le asignamos a un parametro cuando
+llamamos a la funcion.
+los argumnentos son asignados a sus correspondientes parametros.
+
+
+La funcion tambnien puede retornar el valor hacia el programa 
+principal.
+Proposito es que la funcion retorne un valor desp de ejecutarse.
+Lo hacemos con una sentencia return
+
+def <funcion>(<parameter>):
+    #codgio
+    return <valor>
+
+def sumar(x, y):
+    return x + y
+
+>>>resultado = sumar(4, 5)
+>>>resultado @@
+9
+
+Cuando se ejecuta return la funcion se detieen inmediatamente.
+Si no se retorna return, por defecto una funcion devuelve none
+
+def sumar(x, y):
+    print(x + y)
+
+>>>resultado = sumar(4, 9)
+9
+>>>print(resultado) #ya que resultado no tiene nada guardado(el 
+print no guarda el valor explicitamente). Lo q retorna x defecto es None
+None
+
+
+n le shell interactico el valor retornado por la llamada a una funcion
+no se muestra si se asigna a una variable.
+Para verlo podrias usar print o llamar a la variable retornada (@@).
+
+SCOPE
+Alcance q tendra la varible en un programa. Este alcance det donde se 
+podra usar. El scop determina a que variable se tiene acceso en cada parte
+del programa.
+
+Variable Global y Local
+GLOBAL son las definidas en el program priuncipal. Pueden ser accedidaas en 
+cualquier parte del programa.
+LOCAL son def en una funcion. Solo pueden ser accedidas en la funcion.
+
+
+RECUSION
+Definir algo en terminos de si mismo.
+Sucesion fibonacci: el n esesimo numero de la secuancia es el resulta
+sde sumar los dos num anteriores.
+la suscecion inica con 0 y 1.
+fib(n) = fib(n-1) + fib(n-2) es una definicion recusiva, usamos fib para definir fib
+0, 1, 1, 2, 3, 5, 8, 13, 21...
+
+
+Funciones recursivas tienen:
+\Un casso base u un caso recursivo.
+El primero permite que el proceso se detenga, deje de llamarse una y otra vez.
+el segundo permite descompner un problema en una version mas pequena de ese mismo problema
+hasta llegar al caso base que detiene el proceso.
+
+def fibonacci(n): 
+    if n == 0 or n == 1:
+        return n
+    else:
+        return fibonacci(n-1) + fibonacci(n-2)
+
+n es igual a la posicion de numero en la sucesion, iniciando en 0 para el primer elemento.
+
+>>>fibanacci(6)
+8  # el 8 esta en la posicicion 6
+
+
+def factorial(n):
+    if n == 0 or n == 1:
+        return 1
+    else:
+        return n*factorial(n-1)
+
+
+
+ARCHIVOS
+Como trabajar con archivos en python. En estos ejemplos asumimos que los archivos
+estan en la misma ubicacion que esta el archivo python q estamos trabajando.
+
+Usamos una sentencia with
+
+with open('<nombre_archivo>.txt', 'r') as archivo:
+    #trabajar con el archivo
+
+la letra r denota el modo de apertura del archivo y pa q se va a usar.
+open nos permite abrir el archivo.
+Como esta vex solo vamos a leer el archivo podemos pasar solo la r como parametro u omitirlo
+ya qe r es su valor por defecto
+
+as archivo  archivo es el nombre de la variable.Esta variabel se puede usar en el 
+cuerpo del codigo.
+
+with open('frases_famosas.txt', 'r') as archivo:
+    for linea in archivo:
+        print('===frase===')
+        print(linea)
+
+asignamos el archivo frases_famosas a a la varia archivo. en el cuerpo del codigo 
+tenemos un ciclo,
+para cada linea en el archivo vamos a mostrar la frase y vamos a imprimir 
+el contnido de cada linea
+
+with open('apuntes_curso_basico.txt', 'r') as archivo:
+    for linea in archivo:
+        print('===frase===')
+        print(linea)
+
+
+
+MODOS DE APERTURAS DE ARCHIVOS
+r (read) se usa para leer el archivo
+w (write) se usa para escribir, reemplaza completemanete el contenido del archivo
+a (append) añadir permite añadir conteniudo al final del archivo, si modificar lo previo
+Agregar un + incluye leer. Por ejemplo w+ es leer y escribir.
+
+MODIFICAR ARCHIVOS
+Reemplazar completamente el contenido del archvivo o
+Añadir contenido al archvio al final.
+
+with open('apuntes_curso_basico.txt', 'w') as archivo:
+    #codigo
+cuando llamemos al metodo write del archivo
+archivo.write(<contenido>)
+
+notas = {
+	'Nora' : 87,
+	'Rodrigo' : 24,
+	'Roberto' : 20
+}
+
+with open('data_students.txt', 'w') as archivo:
+    for nombre, nota in notas.items():
+        archivo.write(nombre + ' ' + str(nota) + '\n')
+
+Si es que no exitia el archivo data_students.txt se creará, si existia se modificara.
+
+Para agregar mas info al archivo
+
+nuevas_notas = {
+	'Javier' : 87,
+	'Jony' : 24,
+	'Mario' : 20
+}
+with open('data_students.txt', 'a') as archivo:
+    for nombre, nota in nuevas_notas.items():
+        archivo.write(nombre + ' ' + str(nota) + '\n')
+
+
+
+IMPORTACIONES
+Son importantes cuando nuestros porgamas crezcan.
+MODULO es un archivo python q conntiene funciones y sentencias.
+Cundo tenagamos nuestro progr principla vamos a importar esos modulos
+
+Importacion es una sentencia que da accesso a lo definido en el moduilo 
+importado.
+import <modulo>
+
+para llamr a ala fucnion que esta defn=inida dentrod el modulo
+modulo.funcion(argumentos)
+>>>import math
+>>>math.pow(9, 2)  #pow es exponente 9 al cuadrado.
+81.0
+
+Para aacceder a una const
+modulo.constante
+>>>modulo.pi
+3,141516....
+
+otra alternativa es importar el modulo de esta oforma para asignarle 
+un nombre especifico
+import modulo as new_name
+
+import math as matematicas
+>>>matematica.pow(9, 2)
+
+OTRA SINTAXIS par aimportar solo elementos de un modulo en especifico
+from <modulo> import <elemento> sintaxis recomendada
+from math import pow
+>>>pow(9, 2) ya podemos usar la funcion directamente sin 
+especificar el modulo al cual provienen.
+
+
+NO SE RECOMIENDA
+import modulo import *
+imorta todos los elementos de ese modulo pero para poder usarlo las
+ funciones de ese modulo solo tendremos que usar sus nombre,
+eso puede traer muchas confusiones, sobre todo si ya tinen elementos 
+parecidos a esos elementos del modulo.
+
+
+
+ERRORES Y EXCEPCIONES EN PYTHON
+Errores son comunmente de sintaxis
+
+Excepciones es una error detctado durante la ejecucion de un programa.
+La sistaxis es correcta pero el programa no se ejecuta.
+POR EJEMPLO index error es cuando intentams acceder a un indice de caracter no valido.
+indice fuera de rango.
+Error de clave, en diccionarios, ya que no existe en el dicc.
+Error de nombre, es decir variable no definida.
+ZeroDivisonCero
+RecursionError ES CUANDO EL PARAAMTERO DE La lllamad recursiva no 
+se esta disminuyendo, se ejecuta infinitamente, nunca se llego al caso base.
+
+Bugs errores de logica.
+
+Para manejar las excepciones usamos
+try:
+  #intenta ejec este codigo
+except:
+# si ocurre un arror detente inmediatamente y ejecuta este cosigo de eroor.
+
+num1 = int(input('ingrese un numero: '))
+num2 = int(input('ingrese un numero: '))
+try:
+    resultado = num1 / num2
+    print(F'(num1)/(num2) =', resultado)
+except:
+    print('Alert, Exception')
+
+
+Tambien se puede especificar que tipo de exception es. (ES MEJOR SER EXPLICITO EN PYTHON
+try:
+    resultado = num1 / num2
+    print(F'(num1)/(num2) =', resultado)
+except ZeroDivisionError:
+      print('Alert, Exception') aqui solo manejamos el error de division x 0
+
+tambien se puede tener multiples clausulas except par manejar diferentes tipos de excepciones.
+
+
+Otra alternativa es usar una exception como una variable, para poder usarla dentro del codigo.
+try:
+    resultado = num1 / num2
+    print(F'(num1)/(num2) =', resultado)
+except ZeroDivisionError as e:
+      print(e) 
+>>>dision by zero
+
+Tambien podemos usar la clausula else desp del except sino ocurrio como se esperaba
+try:
+except tipo_de_exception as <var>:
+elese:
+    print('else')
+
+
+try:
+    resultado = num1 / num2
+    print(F'(num1)/(num2) =', resultado)
+except ZeroDivisionError as e:
+      print(e) 
+else:
+     print('else')
+
+si num1 es 15 y num2 es 3
+entonces se imprimiria
+>>>(num1)/(num2) = 5.0
+>>>else
+
+
+FINALY
+es una claussula q nos permite ejecutar codigo asi se haya cometido una exception o no.
+Si ejecuta si o si.
+try:
+except
+else: ...opcional
+finally:
+
+try:
+    resultado = num1 / num2
+    print(F'(num1)/(num2) =', resultado)
+except ZeroDivisionError as e:
+      print(e) 
+else:
+     print('else')
+finally:
+    print('finally')
+
+Finally siempre va despu de else (si este existe ya que es opcional).
+Cuando estan las 4 deben estar en ese orden.
+
+Si no se ejecuta el try, pasa al except y luego al finally.
+Si se ejecuta el try puede pasar al else y luego al finally.
+num1 = 15  num2 = 0
+try:
+    resultado = num1 / num2
+    print(F'(num1)/(num2) =', resultado)
+except ZeroDivisionError as e:
+      print(e) 
+else:
+     print('else')
+finally:
+    print('finally')
+
+>>>division by zero
+>>>finally
+
+num1 = 0  num2 = 10  
+try:
+    resultado = num1 / num2
+    print(F'(num1)/(num2) =', resultado)
+except ZeroDivisionError as e:
+      print(e) 
+else:
+     print('else')
+finally:
+    print('finally')
+
+(num1)/(num2) = 0.0
+else
+finally
+
+
+PROGRAMACION ORIENTADA A OBJETOS
+Hasta ahora vimos programas que se ejecutan linea por linea.
+Representamos objetos de la vida real como codigo.
+Cada objto como un plano, ejemplo los estudiantes de un colegio
+y guardamos la info de cada estudiantes. Los plaos se denominan clases.
+Las clases nos permiten representar la funcionalidad y atributos de casda objetos.
+
+la palabra class le dice a python que estamos definiendo un objeto nuevo
+
+class CuentaBancaria:
+    def __init__(self, num_cuenta, name_titular, balance): # este nombre es reservado para una inicializacion def __init__():
+        self.num_cuenta = num_cuenta  #
+        self.name_titular = num_cuenta
+        self.balance = balance
+
+self define instancias actual, es decir cada unas de esa cuentas bancarias que vamos a crear a partir de ese plano.
+
+
+Las class tambienn pueden usarse para representar funcionalidad del objeto en el sistema.
+
+Funcionalidad: retirar, depositar, generar balnace, actualizar fondos, etc   .. rlevantes para el sistema
+
+class CuentaBancaria:
+    def __init__(self, num_cuenta, name_titular, balance): 
+        self.num_cuenta = num_cuenta
+        self.name_titular = num_cuenta
+        self.balance = balance
+  # funcionalidades en nuestra clase
+    def generar_balance(self):  #metodo generar balance y mostrarlo en nuestra consola. Self permite trabajar
+con la data de cada cuenta bancaria.
+    def generar_balance(self):
+        print(self.balance) 
+
+    def depositar(self, monto):  #met para depositar en nuestra cuenta, incrementa el balance.
+        if monto > 0:
+            self.balance += monto
+
+Apartir de este plano podemos generar muhcas instancias, actulaizando los atributos en cada isntancias.
+class CuentaBancaria:
+    def __init__(self, num_cuenta, name_titular, balance):
+        self.num_cuenta = num_cuenta
+        self.name_titular = name_titular
+        self.balance = balance
+    def generar_balance(self):  @estamso geenrando un metodo para menjar funciones realcionadas con estos objetos.
+        print(self.balance)
+    def depositar(self, monto):
+        if monto > 0:
+            self.balance += monto
+
+ATributos de instacias (represntaciones concretas). SELF se refiere a la instancia.
+Como podemos creer una instancia. Definimos una instancia mi_cuenta
+mi_cuenta = CuentaBancaria('105.305.3025', 'Rodrigo Arg',  5600)  esto crea una instancia nueva que va estar guardada en la variable micuenta.
+
+Si queresmos acceder a la var mi cuenta
+>>>print(mi_cuenta.balance)
+5600
+
+Pero nosotros ya definimos un metodo para llmar al balance de la cuenta, podemos llmarlo directamete.
+>>>mi_cuenta.generar_balance() # como no hay otros parametros ademos de self en el metodo definido, podemos usar parentesis vacios.
+5600
+
+en realidad el valor de self en los parentesis vacio fue la instancia mi cuenta.
+
+
+lo llamamos con parentesis vacios porque tenemos que asumir que self ya tiene sus propios valores (instancia).
+
+Ahora llamamos el metodo depositar
+>>>mi_cuenta.depositar(400)  #omitimos self, solo ponemos el monto a depositar.
+>>>mi_cuenta.generar_balance()
+6000
+
+class CuentaBancaria:
+    def __init__(self, num_cuenta, name_titular, balance):
+        self.num_cuenta = num_cuenta
+        self.name_titular = name_titular
+        self.balance = balance
+    def generar_balance(self):
+        print(self.balance)
+    def depositar(self, monto):
+        if monto > 0:
+            self.balance += monto
+
+            
+mi_cuenta = CuentaBancaria('105.305.3025', 'Rodrigo Arg',  5600)
+print(mi_cuenta.balance)
+5600
+mi_cuenta.generar_balance()
+5600
+mi_cuenta.depositar(400)
+mi_cuenta.generar_balance()
+6000
+
+
+ 
+

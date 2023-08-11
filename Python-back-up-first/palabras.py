@@ -1,0 +1,1 @@
+lista_palabras = ['aire', 'hielo', 'fuego', 'tierra']
